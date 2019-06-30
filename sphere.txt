@@ -1,0 +1,20 @@
+clear all
+nx = 255; ny = 255; nz =255; 
+x = linspace(-1, 1, nx); 
+y = linspace(-1, 1, ny); 
+z = linspace(-1, 1, nz); 
+for i=1:255 X(:,i) =x; 
+Y(i,:) =y; end
+spec=ones(255,255); 
+for i=1:255 
+Z(:,:,i)=spec.*z(i); 
+end
+X2= repmat(X,[1 1 255]); 
+Y2= repmat(Y,[1 1 255]);
+[X, Y, Z] = ndgrid(x, y, z); 
+A = zeros(nx, ny, nz); 
+r = sqrt(X.^2 + Y.^2 + Z.^2 );
+A = exp(-4*r); 
+for i=1:255 
+imwrite(A(:,:,i),'C:\...\sphere.tif','WriteMode','append'); 
+end
