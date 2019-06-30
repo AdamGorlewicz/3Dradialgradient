@@ -1,2 +1,2 @@
 # 3Dradialgradient
-Matlab code that produces radial 3D distribution of 8-bit intensities
+Matlab code that produces spherical gradient of 8-bit intensities
